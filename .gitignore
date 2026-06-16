@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+~$*
+# dist/ y docs/ SÍ se versionan: docs/ es lo que sirve GitHub Pages.

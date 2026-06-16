@@ -1,0 +1,542 @@
+# framework.yaml — Arquetipo legislativo de ciberseguridad para América Latina y el Caribe
+# Fuente: Llamas Covarrubias & Moliné Rodríguez (documento de referencia).
+# Fuente de verdad del Excel, el navegador y la app de autoevaluación.
+meta:
+  version: "0.2"
+  total_pilares: 10
+  total_subpilares: 59
+  total_items: 177
+  escala:
+    - nivel: 0
+      etiqueta: "Ausente"
+      descripcion: "No hay base normativa identificable para el elemento."
+    - nivel: 1
+      etiqueta: "Disperso / implícito"
+      descripcion: "Existe solo en normas penales, sectoriales o administrativas fragmentadas (brecha conceptual)."
+    - nivel: 2
+      etiqueta: "Previsto no habilitante"
+      descripcion: "Mencionado, pero sin lex specialis, sin competencias ni estándares verificables (brecha normativa)."
+    - nivel: 3
+      etiqueta: "Establecido en ley especial"
+      descripcion: "Definido en ley, con autoridad y deberes exigibles (arquitectura legal cubierta)."
+    - nivel: 4
+      etiqueta: "Establecido y verificable"
+      descripcion: "Además con métricas/KPIs, plazos y trazabilidad operativa (cierre de la brecha operativa)."
+  lecturas:
+    cobertura_legal: "% de subpilares con nivel promedio >= 3"
+    madurez_operativa: "% de subpilares con nivel promedio == 4"
+  nota_alcance: "Niveles 0-3 = arquitectura legal; nivel 4 = capa operativa (extensión)."
+  nota_tier: "Tier (Núcleo/Intermedio/Avanzado): secuencia de adopción propuesta y editable."
+pilares:
+  - id: A
+    nombre: "Gobernanza y coordinación nacional"
+    nucleo: "Arquitectura institucional mínima para que la ley sea ejecutable."
+    subpilares:
+      - ref: A1
+        nombre: "Definiciones"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 6; Chile art. 2; Japón Basic Act art. 2"
+        items:
+          - "Define los términos núcleo (incidente, riesgo, vulnerabilidad, entidad obligada) de forma cerrada."
+          - "Alinea la terminología con estándares y con otras leyes (penal, datos, sectorial), sin contradicciones."
+          - "No esconde obligaciones materiales dentro de las definiciones (un término, un significado)."
+      - ref: A2
+        nombre: "Ámbito y extraterritorialidad"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 ámbito/Anexos I-II; Singapur s.3; Chile art. 4"
+        items:
+          - "Delimita el alcance material, subjetivo y sectorial (qué sí y qué no)."
+          - "Usa impacto sistémico/criticidad como criterio (no solo tamaño) y prevé exclusiones e interfaces."
+          - "Regula la extraterritorialidad funcional (aplica si el servicio afecta al país)."
+      - ref: A3
+        nombre: "Autoridad / Agencia nacional"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2; Chile (ANCI); Singapur; Japón"
+        items:
+          - "Crea la autoridad con mandato legal expreso y función rectora/coordinadora."
+          - "Le otorga potestad normativa secundaria, de información, supervisión y sanción."
+          - "Le asegura presupuesto, personal y autonomía técnica; separa asistencia de sanción."
+      - ref: A4
+        nombre: "Estrategia, políticas, planes y KPIs"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 7"
+        items:
+          - "Exige estrategia nacional con objetivos, responsables y secuencia de implementación."
+          - "Incluye indicadores (KPIs) y mecanismos de revisión periódica."
+          - "Distingue la estrategia (ex ante) de las potestades/sanciones de la ley."
+      - ref: A5
+        nombre: "Roles institucionales"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 (management bodies/SPOC/CSIRT); Chile; México art. 168 Bis 13"
+        items:
+          - "Asigna accountability a la alta dirección u órgano de gobierno."
+          - "Crea gestión especializada (CISO/delegado) distinta del jefe de TI."
+          - "Define coordinación/respuesta (SPOC, CSIRT) y canales de reporte vertical y horizontal."
+      - ref: A6
+        nombre: "Consejo multiactor"
+        tier: "Intermedio"
+        referencia_comparada: "Chile (Consejo Multisectorial); UE SCCG; Japón Expert Council"
+        items:
+          - "Institucionaliza un consejo consultivo permanente y plural (no consulta esporádica)."
+          - "Define su función como consultiva (asesora, no decide)."
+          - "Fija reglas de integridad, abstención y reserva."
+      - ref: A7
+        nombre: "Transparencia y derechos"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 rec. 51; Chile art. 3"
+        items:
+          - "Fija salvaguardas de derechos como límite (legalidad, necesidad, proporcionalidad)."
+          - "Protege el cifrado de extremo a extremo frente a debilitamientos estructurales."
+          - "Incluye una cláusula de no-retroceso (no degradar garantías ya reconocidas)."
+      - ref: A8
+        nombre: "Métricas y rendición de cuentas"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 art. 19; Cyber Solidarity Act art. 21"
+        items:
+          - "Obliga a medir estrategia y capacidades con métricas ordinarias."
+          - "Prevé evaluación institucional independiente o entre pares."
+          - "Institucionaliza la revisión post-incidente (aprendizaje)."
+      - ref: A9
+        nombre: "Ventanilla única (one-stop)"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 (SPOC); DORA art. 21"
+        items:
+          - "Establece un punto único de contacto (one-stop)."
+          - "Fija reglas anti-duplicidad: el regulado reporta una vez y el Estado redistribuye."
+          - "Armoniza contenidos/plantillas de reporte entre autoridades."
+      - ref: A10
+        nombre: "VEP (0-days)"
+        tier: "Avanzado"
+        referencia_comparada: "EE. UU.: VEP 2017"
+        items:
+          - "Crea un proceso estatal trazable para ponderar retención/divulgación de 0-days."
+          - "Lo asigna a una instancia colegiada con secretaría y registro documental."
+          - "Impone reevaluación periódica (no retención indefinida) e informe."
+  - id: B
+    nombre: "Capacidades operativas del Estado"
+    nucleo: "Músculo técnico permanente para ver, responder y coordinar."
+    subpilares:
+      - ref: B1
+        nombre: "CSIRT / CERT nacionales o sectoriales"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 11; Chile"
+        items:
+          - "Designa formalmente uno o más CSIRT y define su constituency."
+          - "Fija mandato mínimo, disponibilidad continua y canales seguros."
+          - "Asegura recursos/continuidad y reglas de coordinación nacional e internacional."
+      - ref: B2
+        nombre: "Gestión de crisis y continuidad"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 arts. 9, 16; DORA art. 11"
+        items:
+          - "Designa autoridad/comité de gestión de crisis de gran escala."
+          - "Exige un plan nacional de respuesta con roles, umbrales y escalamiento."
+          - "Ordena ejercicios periódicos, protocolos de comunicación y continuidad de funciones críticas."
+      - ref: B3
+        nombre: "CTI y compartición"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 art. 29, rec. 119; EE. UU. 6 U.S.C. §1505"
+        items:
+          - "Habilita el intercambio voluntario/estructurado de CTI (IoC, TTPs, near misses)."
+          - "Otorga safe harbor frente a responsabilidad por compartir de buena fe."
+          - "Resuelve la tensión de competencia/antimonopolio para que la información circule."
+      - ref: B4
+        nombre: "GovSOC / Centro Nacional"
+        tier: "Avanzado"
+        referencia_comparada: "Cyber Solidarity Act; NIS2"
+        items:
+          - "Crea capacidad de monitoreo continuo del sector público (GovSOC)."
+          - "Habilita correlación de telemetría y producción de alertas/conciencia situacional."
+          - "Establece enlace técnico directo con el CSIRT e interoperabilidad con estructuras de alerta."
+      - ref: B5
+        nombre: "Respuesta comunicacional"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2; CSA arts. 7, 10; DORA arts. 6, 11, 14"
+        items:
+          - "Define avisos a los afectados y al público cuando proceda."
+          - "Coordina mensajes entre autoridades técnicas, regulatorias y de crisis (portavoz/roles)."
+          - "Prevé auxilio/solidaridad de emergencia y documentación de resultados."
+  - id: C
+    nombre: "Gestión de riesgos e higiene digital"
+    nucleo: "Capa mínima y continua de gestión del riesgo en cada entidad obligada."
+    subpilares:
+      - ref: C1
+        nombre: "ISMS / SGSI"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 21; Reg. (UE) 2024/2690"
+        items:
+          - "Exige medidas técnicas/organizativas apropiadas y proporcionales (enfoque all-hazards)."
+          - "Cubre el ciclo política → riesgo → controles → monitoreo → mejora (sistema, no checklist)."
+          - "Remite a estándares (ISO 27001/27002) como referente, sin imponer certificación cerrada."
+      - ref: C2
+        nombre: "Cadena de suministro / MSP / MSSP"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 21(2)(d) y (3); CRA Anexo VIII, art. 53"
+        items:
+          - "Obliga a gestionar el riesgo de proveedores directos y MSP/MSSP."
+          - "Considera vulnerabilidades y calidad de prácticas del proveedor en la selección."
+          - "Habilita trazabilidad de componentes (SBOM) y mejores contratos."
+      - ref: C3
+        nombre: "Nube / servicios gestionados"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2; Reg. (UE) 2024/2690; Reg. (UE) 2023/1543; CLOUD Act; EUCS"
+        items:
+          - "Asegura control operativo real (logs, telemetría, portabilidad), no solo localización."
+          - "Aclara que externalizar infraestructura no externaliza la responsabilidad."
+          - "Aborda la soberanía operativa sin convertirla en proteccionismo encubierto."
+      - ref: C4
+        nombre: "Awareness y formación por rol"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 arts. 20, 21; DORA art. 13; CSA art. 10"
+        items:
+          - "Impone ciberhigiene básica como piso común."
+          - "Exige formación periódica proporcional al rol, incluida la alta dirección."
+          - "Alcanza a terceros/proveedores en funciones críticas, con gobernanza y presupuesto."
+      - ref: C5
+        nombre: "Divulgación responsable / buena fe"
+        tier: "Intermedio"
+        referencia_comparada: "CRA arts. 13, 14; DOJ CFAA"
+        items:
+          - "Exige una política de divulgación (VDP) con alcance, reglas y punto de contacto."
+          - "Estructura recepción, análisis, remediación y respuesta al reportante (CVD)."
+          - "Reconoce safe harbor para investigación de buena fe y delimita pruebas autorizadas."
+  - id: D
+    nombre: "Infraestructuras esenciales / sectores críticos"
+    nucleo: "Obligaciones reforzadas para quienes, si caen, arrastran a otros."
+    subpilares:
+      - ref: D1
+        nombre: "Sectores / operadores esenciales"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 3/Anexos; CER arts. 5, 6; Chile art. 4"
+        items:
+          - "Define el criterio de entrada (qué sectores/servicios entran por ley)."
+          - "Permite intensificación/designación administrativa por criticidad."
+          - "Mantiene un registro/lista nacional con revisión periódica."
+      - ref: D2
+        nombre: "Obligaciones reforzadas"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 arts. 20, 21, 23; CER arts. 12, 13; DORA arts. 11, 24, 26"
+        items:
+          - "Impone obligaciones avanzadas escalables y proporcionales al riesgo sistémico."
+          - "Exige continuidad con metas (RTO/RPO) y validación, no solo políticas escritas."
+          - "Habilita pruebas avanzadas (tipo TLPT) para los operadores más sensibles."
+      - ref: D3
+        nombre: "Supervisión sectorial y coordinación"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 8; CER arts. 9, 19; Chile arts. 25, 26, 37"
+        items:
+          - "Designa autoridad(es) competente(s) y un punto único de contacto."
+          - "Fija reglas expresas de reparto competencial (rectoría + sectoriales equivalentes)."
+          - "Establece coordinación previa anti-duplicidad/solapamiento."
+      - ref: D4
+        nombre: "Interdependencias / cascada"
+        tier: "Avanzado"
+        referencia_comparada: "NIS2 arts. 21, 22; CER arts. 5, 12; Cyber Solidarity Act arts. 3, 5, 21"
+        items:
+          - "Exige evaluación nacional de interdependencias intersectoriales."
+          - "Obliga a cada entidad crítica a evaluar sus dependencias mutuas."
+          - "Habilita pruebas conjuntas y revisión de incidentes sistémicos (efecto cascada)."
+      - ref: D5
+        nombre: "OT / ICS (físico-lógico)"
+        tier: "Avanzado"
+        referencia_comparada: "NIS2; CER; CRA; ISA/IEC 62443"
+        items:
+          - "Da tratamiento específico a OT/ICS cuando hay proceso físico-digital relevante."
+          - "Remite a un marco técnico reconocido (p. ej. ISA/IEC 62443) sin absorber su detalle."
+          - "Distribuye responsabilidades por roles (asset owner, integrador, proveedor) y habilita auditoría."
+  - id: E
+    nombre: "Reportes y gestión de incidentes"
+    nucleo: "Notificación escalonada, aprendizaje y retroalimentación."
+    subpilares:
+      - ref: E1
+        nombre: "Umbrales y plazos"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 23; DORA art. 19 + Reg. Del. 2025/301; RGPD art. 33"
+        items:
+          - "Fija un umbral de significancia que dispara el deber de reportar."
+          - "Establece reporte escalonado por fases con plazos (p. ej. 24 h / 72 h / final)."
+          - "Define el canal/autoridad receptora y la trazabilidad del expediente."
+      - ref: E2
+        nombre: "Contenido del reporte"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2; DORA; RGPD; CIRCIA/NPRM"
+        items:
+          - "Define el contenido por fases (alerta temprana / notificación / informe final)."
+          - "Asegura información suficiente para triage y correlación (IoC, TTPs)."
+          - "Permite que la autoridad/CSIRT cierre el bucle con acuse, feedback y orientación."
+      - ref: E3
+        nombre: "Ransomware"
+        tier: "Avanzado"
+        referencia_comparada: "CIRCIA/NPRM; OFAC; FinCEN; UE (propuesta NIS2 2026)"
+        items:
+          - "Distingue el ransomware (cifrado, exfiltración, amenaza de publicación) del incidente genérico."
+          - "Crea reporte específico del pago con plazo perentorio y conexión al expediente."
+          - "Activa coordinación con sanciones y con AML/CFT cuando proceda."
+      - ref: E4
+        nombre: "Protección del informante / víctima"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 arts. 23, 30; Dir. (UE) 2019/1937; CISA 2015"
+        items:
+          - "La mera notificación no agrava la responsabilidad ni es admisión de culpa."
+          - "Protege la confidencialidad del informante de buena fe frente a represalias."
+          - "Permite reportes voluntarios y de near misses por canal seguro."
+      - ref: E5
+        nombre: "Clasificación de severidad"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2; DORA + Reg. Del. 2024/1772"
+        items:
+          - "Define criterios comunes de severidad (no a discreción del reportante)."
+          - "Los vincula con variables objetivas y verificables."
+          - "Conecta severidad con disparadores de reporte y escalamiento; deja margen sectorial."
+      - ref: E6
+        nombre: "Lecciones aprendidas / post-mortem"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2; DORA art. 13; Cyber Solidarity Act art. 21"
+        items:
+          - "Obliga a revisión posterior interna (causa raíz, eficacia de respuesta) supervisable."
+          - "Verifica si procedimientos, escalamiento y comunicación funcionaron."
+          - "Prevé aprendizaje sistémico para incidentes significativos o transfronterizos."
+      - ref: E7
+        nombre: "Interoperabilidad de reportes"
+        tier: "Avanzado"
+        referencia_comparada: "NIS2 art. 23(11); DORA + Reg. Ej. 2025/302; STIX/TAXII"
+        items:
+          - "Define formularios, campos obligatorios, glosarios y validaciones."
+          - "Exige canales seguros y circuito de respuesta/actualización (sin pedir lo mismo dos veces)."
+          - "Habilita interoperabilidad técnica avanzada (STIX 2.1/TAXII 2.1) entre autoridades/CSIRTs."
+  - id: F
+    nombre: "Seguridad de productos, servicios y certificación"
+    nucleo: "Deberes del fabricante durante todo el ciclo de vida."
+    subpilares:
+      - ref: F1
+        nombre: "Productos / IoT"
+        tier: "Intermedio"
+        referencia_comparada: "CRA; RED + Reg. Del. 2022/30"
+        items:
+          - "Impone diseño seguro, evaluación de riesgo y período de soporte comunicable."
+          - "Exige manejo de vulnerabilidades/CVD con punto de contacto durante el soporte."
+          - "Regula el fin de soporte (EoL) visible y extiende la lógica a IoT/radio."
+      - ref: F2
+        nombre: "Conformidad / certificación proporcional"
+        tier: "Avanzado"
+        referencia_comparada: "CRA (Anexo VIII); CSA art. 46; CRA art. 27"
+        items:
+          - "Hace la intensidad de evaluación proporcional al riesgo del producto."
+          - "Distingue conformidad, certificación y marcado."
+          - "Evita esquemas nacionales fragmentados (interopera con esquemas reconocidos)."
+      - ref: F3
+        nombre: "Etiquetado / información al usuario"
+        tier: "Intermedio"
+        referencia_comparada: "CRA"
+        items:
+          - "Exige informar el fin de soporte (al menos mes/año) antes o al momento de compra."
+          - "Publica el canal de reporte de vulnerabilidades."
+          - "Mantiene la información accesible durante el período de soporte/actualización."
+      - ref: F4
+        nombre: "Seguro cibernético"
+        tier: "Avanzado"
+        referencia_comparada: "DORA art. 27; Francia LOPMI; EIOPA/ENISA"
+        items:
+          - "Lo trata como mecanismo complementario de mercado (no pilar sustantivo)."
+          - "No confunde los planos (entidad / responsabilidad profesional / señalización)."
+          - "Evita imponer seguro obligatorio sin condiciones claras."
+      - ref: F5
+        nombre: "Reconocimiento / vigilancia / retiros"
+        tier: "Avanzado"
+        referencia_comparada: "CSA art. 58, EUCC; CRA arts. 53, 54, 56"
+        items:
+          - "Reconoce ordenadamente esquemas/certificados para evitar fragmentación."
+          - "Designa autoridad(es) con poderes reales de vigilancia de mercado."
+          - "Prevé medidas correctivas claras (restricción, retiro, recall, suspensión) y escalamiento."
+      - ref: F6
+        nombre: "Responsabilidad por vulnerabilidades graves"
+        tier: "Avanzado"
+        referencia_comparada: "CRA arts. 13, 64, Anexo I; PLD 2024/2853"
+        items:
+          - "Fija un deber de diligencia (secure-by-design/default, vulnerability handling)."
+          - "Prevé sanciones administrativas por incumplir ese deber."
+          - "Articula responsabilidad civil por producto defectuoso (defecto + daño + causalidad)."
+  - id: G
+    nombre: "Cooperación internacional y ciberdiplomacia"
+    nucleo: "Cooperación exterior como capacidad operativa permanente."
+    subpilares:
+      - ref: G1
+        nombre: "Mecanismos de cooperación"
+        tier: "Intermedio"
+        referencia_comparada: "Budapest art. 35; OSCE 1202; OEA/CICTE; NIS2 arts. 14-16"
+        items:
+          - "Estructura canales 24/7 para intercambio urgente."
+          - "Prevé medidas de confianza (CBMs) y redes operativas de CSIRTs."
+          - "No confunde la cooperación penal (Budapest) con la técnico-operativa."
+      - ref: G2
+        nombre: "Asistencia mutua no penal"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 arts. 11, 15, 17; OEA/CICTE"
+        items:
+          - "Separa expresamente la cooperación técnico-operativa de la penal."
+          - "Habilita auxilio técnico (alertas, contención, recuperación) sin expediente penal previo."
+          - "Da base legal autónoma para no desplazar todo a los carriles penales lentos."
+      - ref: G3
+        nombre: "Gestión de crisis y mando"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 arts. 9, 16; CER art. 9"
+        items:
+          - "Designa autoridad nacional de gestión de cibercrisis (y la coordinadora si hay varias)."
+          - "Exige un plan nacional de respuesta a crisis de gran escala."
+          - "Conecta el plano operativo con el político y con mecanismos regionales."
+      - ref: G4
+        nombre: "Medidas restrictivas / respuesta diplomática"
+        tier: "Avanzado"
+        referencia_comparada: "UE PESC 2019/797 + Reg. 2019/796; UK 2020; EE. UU. EO 13694/13757"
+        items:
+          - "Institucionaliza el procedimiento de respuesta (no una lista exhaustiva de sanciones)."
+          - "Distingue atribución técnica, atribución político-jurídica y decisión de respuesta."
+          - "Habilita una gama graduada de medidas con criterios de proporcionalidad/escalada."
+      - ref: G5
+        nombre: "Interoperabilidad y confidencialidad"
+        tier: "Intermedio"
+        referencia_comparada: "TLP 2.0 (FIRST); NIS2 art. 29"
+        items:
+          - "Reconoce protocolos de sensibilidad (TLP 2.0) para el intercambio."
+          - "Habilita arreglos formales de re-share (plataformas, automatización, condiciones)."
+          - "Aclara que esos protocolos no sustituyen protección de datos/seguridad nacional/NDAs."
+      - ref: G6
+        nombre: "Ciberdiplomacia institucionalizada"
+        tier: "Avanzado"
+        referencia_comparada: "EE. UU. 22 U.S.C. §§ 10301-10305; UE Digital Diplomacy 2022"
+        items:
+          - "Crea un punto focal de ciberdiplomacia con mandato expreso."
+          - "Coordina con autoridades de ciberseguridad, defensa, justicia y regulación."
+          - "Dota de capacidad diplomática especializada desplegable (no oficina en cada misión)."
+      - ref: G7
+        nombre: "Posición sobre derecho internacional en ciberespacio"
+        tier: "Avanzado"
+        referencia_comparada: "UNIDIR 2024; Países Bajos 2019"
+        items:
+          - "Manda elaborar y publicar una posición nacional sobre derecho internacional en ciberespacio."
+          - "Asegura coordinación interinstitucional para hablar con una sola voz."
+          - "Prevé actualización periódica (posición dinámica, no inmutable)."
+  - id: H
+    nombre: "Gobierno, compras públicas y fomento"
+    nucleo: "Poder de compra del Estado como palanca de ciberseguridad."
+    subpilares:
+      - ref: H1
+        nombre: "Requisitos en contratación pública"
+        tier: "Intermedio"
+        referencia_comparada: "EE. UU. EO 14028/OMB (rescind. M-26-05); NIS2 art. 7; CSA; FedRAMP"
+        items:
+          - "Exige evidencia de desarrollo seguro (atestación/SSDF) en la compra."
+          - "Pide SBOM con elementos mínimos y formato utilizable."
+          - "Exige VDP/CVD y escala la exigencia según criticidad del bien."
+      - ref: H2
+        nombre: "Clausulados MSP / MSSP"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 consid. 85-86; DORA arts. 28, 30; Reg. (UE) 2024/2690"
+        items:
+          - "Exige due diligence y valoración de concentración/criticidad en la selección."
+          - "Fija arquitectura contractual mínima (SLA, localización, auditoría basada en riesgo)."
+          - "Obliga asistencia en incidentes, remediación y causales de terminación."
+      - ref: H3
+        nombre: "Preferencia / inhabilitación"
+        tier: "Avanzado"
+        referencia_comparada: "Chile art. 11(v), Ley 19.886; Dir. 2014/24/UE art. 57; NIS2 arts. 31-36"
+        items:
+          - "Usa la madurez verificable como criterio de elegibilidad/evaluación."
+          - "Articula con el régimen de compras la exclusión por incumplimiento grave."
+          - "Conecta con un sistema de proveedores inhabilitados."
+      - ref: H4
+        nombre: "Fuerza laboral"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 arts. 7, 20, 21; DORA art. 13; Chile art. 11(i); ECSF; NICE"
+        items:
+          - "Profesionaliza por perfiles y competencias mínimas (no capacitación genérica)."
+          - "Habilita referenciar marcos (ECSF/NICE) para perfiles y trayectorias."
+          - "Alcanza a directivos, alta dirección y contratistas críticos, con presupuesto."
+      - ref: H5
+        nombre: "Apoyos a PYMES"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 consid. 56-57, art. 7(2)(i); CSA art. 10"
+        items:
+          - "Prevé guía y asistencia fácilmente accesibles para PYMES."
+          - "Crea puntos de contacto y herramientas/servicios concretos."
+          - "Evita exigir sin apoyar (que la PYME no sea el eslabón débil)."
+      - ref: H6
+        nombre: "Fondo / asistencia a víctimas críticas"
+        tier: "Avanzado"
+        referencia_comparada: "Chile art. 11(m); NIS2 art. 11(3); Cyber Solidarity Act arts. 10, 11"
+        items:
+          - "Habilita asistencia técnica directa a entidades afectadas por incidentes significativos."
+          - "Apoya respuesta e inicio de recuperación cuando las capacidades ordinarias no bastan."
+          - "Materializa el apoyo (proveedores precontratados, subvenciones o equivalentes)."
+  - id: I
+    nombre: "Transparencia, presupuesto y sostenibilidad"
+    nucleo: "Dinero visible, datos, revisión e incentivos para durar."
+    subpilares:
+      - ref: I1
+        nombre: "Presupuesto etiquetado"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 arts. 7, 8, 11; Cyber Solidarity Act arts. 10, 11; Chile (ANCI)"
+        items:
+          - "Crea base legal para financiar capacidades (no a mero arbitrio anual)."
+          - "Asegura suficiencia y continuidad (financiamiento estructural y de emergencia)."
+          - "Prevé trazabilidad/etiquetado presupuestario cuando el sistema lo permita."
+      - ref: I2
+        nombre: "Publicación de estadísticas"
+        tier: "Intermedio"
+        referencia_comparada: "NIS2 art. 18; Chile art. 11(f), 24(h); CSA art. 9"
+        items:
+          - "Recolecta datos de incidentes de forma estructurada."
+          - "Agrega y anonimiza antes de difundir."
+          - "Publica periódicamente en formatos reutilizables, con límites de seguridad."
+      - ref: I3
+        nombre: "Revisión quinquenal"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 arts. 7(4), 19; CER"
+        items:
+          - "Exige revisión periódica (≈5 años) basada en KPIs."
+          - "Cubre capacidades, implementación real y alineación con el panorama de amenazas."
+          - "Permite actualización anticipada ante cambios tecnológicos."
+      - ref: I4
+        nombre: "Estímulos fiscales"
+        tier: "Avanzado"
+        referencia_comparada: "Maryland; Trinidad y Tobago (2024)"
+        items:
+          - "Los habilita como herramienta focalizada (PYMES/sectores)."
+          - "Exige verificabilidad (gastos elegibles, proveedores certificados)."
+          - "Los hace temporales/revisables (sunset), no subsidio permanente."
+  - id: J
+    nombre: "Responsabilidades y sanciones"
+    nucleo: "Ejecutar sin desalentar el reporte responsable."
+    subpilares:
+      - ref: J1
+        nombre: "Anti-SLAPP / buena fe"
+        tier: "Intermedio"
+        referencia_comparada: "DOJ 9-48.000; NIS2 arts. 23, 30; Dir. (UE) 2024/1069; Dir. 2019/1937"
+        items:
+          - "Define operativamente la buena fe (investigar/probar/corregir sin causar daño)."
+          - "Evita el agravamiento de responsabilidad por el solo hecho de reportar."
+          - "Blinda procesalmente frente a demandas abusivas (cese anticipado, costas)."
+      - ref: J2
+        nombre: "Escalera de cumplimiento"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 arts. 32, 34; DORA art. 51; Chile art. 40"
+        items:
+          - "Prevé un catálogo gradual (advertir → ordenar → corregir → sancionar → restringir)."
+          - "Fija criterios objetivos de graduación (intencionalidad, gravedad, cooperación...)."
+          - "Intensifica cuando el incumplimiento persiste o afecta a actores sensibles."
+      - ref: J3
+        nombre: "Procedimiento sancionador y apelación"
+        tier: "Núcleo"
+        referencia_comparada: "NIS2 art. 32(7); Chile arts. 37, 41-43, 46"
+        items:
+          - "Identifica la autoridad competente y el reparto (evita doble punición / non bis in idem)."
+          - "Garantiza cargos fundados, plazo de descargos y resolución motivada."
+          - "Prevé recursos ante instancia independiente y cautelares proporcionales."
+      - ref: J4
+        nombre: "Publicidad proporcional"
+        tier: "Intermedio"
+        referencia_comparada: "DORA art. 54; NIS2 art. 32(4)(h); SEC 8-K (ref. comparada)"
+        items:
+          - "Calibra la publicidad caso por caso (diferir/anonimizar/abstenerse)."
+          - "Distingue publicidad administrativa de divulgación obligatoria al mercado."
+          - "Coordina con regímenes sectoriales para evitar duplicidad/revictimización."

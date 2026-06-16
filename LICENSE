@@ -1,0 +1,19 @@
+MIT License — herramientas de generación (carpeta build/)
+
+Copyright (c) 2025
+
+Se concede permiso, libre de cargos, a cualquier persona que obtenga una copia
+de este software y los archivos de documentación asociados (el "Software"), para
+utilizar el Software sin restricción, incluidos los derechos de usar, copiar,
+modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del
+Software, sujeto a las siguientes condiciones:
+
+El aviso de copyright anterior y este aviso de permiso se incluirán en todas las
+copias o partes sustanciales del Software.
+
+EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
+
+NOTA SOBRE EL CONTENIDO: el marco (framework.yaml y los textos derivados) proviene
+del documento "Ciberseguridad en América Latina y el Caribe: hacia una arquitectura
+legal y un marco común" (Llamas Covarrubias & Moliné Rodríguez). La licencia de ese
+contenido debe definirla la autoría del documento; este aviso MIT cubre solo el código.
