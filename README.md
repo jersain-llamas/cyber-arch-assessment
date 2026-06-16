@@ -85,13 +85,6 @@ No edites el Excel, la app ni el navegador a mano: edita **`framework.yaml`** y 
 python build/generate_all.py   # vuelve a construir todo
 ```
 
-## Publicar el navegador en GitHub Pages
-
-1. Sube el repo a GitHub.
-2. **Settings → Pages → Build and deployment → Deploy from a branch**.
-3. Branch: `main`, carpeta: `/docs`. Guarda.
-4. La URL queda como `https://jersain-llamas.github.io/cyber-arch-assessment/`.
-
 ## Metodología
 
 **Escala de madurez (0–4)** — el nivel del subpilar es el promedio de sus ítems:
